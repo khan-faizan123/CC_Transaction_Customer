@@ -1,0 +1,76 @@
+CREDIT CARD ANALYSIS
+
+- to develop a credit card weekly reports that help us analyze the key performance metrics and all other aspect as well
+
+--- data use 
+
+- Credit Card table:-  (columns description)
+
+- Client_Num: Unique identifier for each credit card client.
+
+- Card_Category: Indicates the type or category of the credit card, such as gold, platinum, or basic. 
+
+- Annual_Fees: The annual fee charged to the cardholder for maintaining the credit card account.
+
+- Activation_30_Days: Indicates whether the credit card was activated within the first 30 days of issuance.
+
+- Customer_Acq_Cost :Customer_Acq_Cost is the amount of money a company spends to get a new customer. It includes things like advertising, marketing, and any other expenses related to convincing someone to become their customer.
+
+- Week_Start_Date: The start date of the week in which the data was recorded.
+
+- Week_Num: The week number corresponding to the date.
+
+- Qtr: indicates the quarter of the year Q1,Q2,Q3,Q4.
+
+- current_year: indicate the year.
+
+- Credit_Limit:  The maximum amount of credit extended to the cardholder by the issuer. 
+
+- Total_Revolving_Bal: The total balance carried forward by the cardholder from one billing cycle to the next.
+
+- Total_Trans_Amt: The total amount of transactions made using the credit card within the specified period.
+
+- Total_Trans_Vol: This column measures the frequency or number of transactions made by cardholders for ex. 111 is trans_vol kind of number of frequency taken for whatever user total_trans_amt.
+
+- Avg_Utilization_Ratio: The average utilization ratio of the credit card, calculated as the ratio of total revolving balance to credit limit. This metric indicates how much of the available credit is being utilized by the cardholder on average.
+(Total_Revolving_Bal/Credit_Limit) = Avg_Utilization_Ratio,the less the utilization ratio the best customer you are for bank.
+
+- Use Chip: this columns specify either customer have use chip,online or swipe.
+
+- Exp Type: Expense type associated with the transaction, such as Grocery, Entertainment, travel,Fuel,Bills etc.
+
+- Interest_Earned: How much the interest earned by the issuer or the bank.
+
+- Delinquent_Acc: Delinquent_Acc means whether someone is late in paying their credit card bill. If a person has a delinquent account, it means they haven't paid their credit card bill on time.
+
+Customer Table :- (columns description)
+
+- Client_num: Unique identifier for each customer.
+
+- Customer_Age: Age of the customer.
+
+- Gender: Gender of the customer.
+
+- Dependent_Count: Number of dependents the customer has.
+
+- Education_Level: Educational qualification of the customer.
+
+- Marital_Status: Marital status of the customer.
+
+- state_cd: State code of the customer's residence.
+
+- Zipcode: Zip code of the customer's residence.
+
+- Car_Owner: Indicates whether the customer owns a car or not.
+
+- House_Owner: Indicates whether the customer owns a house or not.
+
+- Personal_loan: Indicates whether the customer has a personal loan or not.
+
+- contact: Contact method used to reach the customer.
+
+- Customer_Job: Job or occupation of the customer.
+
+- Income: Income of the customer.
+
+- Cust_Satisfaction_Score: Customer satisfaction score.

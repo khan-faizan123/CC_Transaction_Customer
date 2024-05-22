@@ -1,0 +1,45 @@
+// creating age group to ease analysis
+AgeGroup = SWITCH(
+    TRUE(),
+    customer[Customer_Age] < 30,"20-30",
+    customer[Customer_Age] >= 30 && customer[Customer_Age] < 40,"30-40",
+    customer[Customer_Age] >= 40 && customer[Customer_Age] < 50,"40-50",
+    customer[Customer_Age] >= 50 && customer[Customer_Age] < 60,"50-60",
+    customer[Customer_Age] >= 60 ,"60+",
+    "Unknown")
+
+
+// creating income group
+IncomeGroup = SWITCH(
+    TRUE(),
+    customer[Income] < 35000,"Low",
+    customer[Income] >= 35000 && customer[Income] < 70000, "Medium",
+    customer[Income] > 70000,"High",
+    "Unknown")
+
+// 'credit_card (3)' table name 
+// generating weekno according to weekstartdate
+WeekNo = WEEKNUM('credit_card (3)'[Week_Start_Date])
+
+// Revenue 
+Revenue = 'credit_card (3)'[Annual_Fees] + 'credit_card (3)'[Interest_Earned] + 'credit_card (3)'[Total_Trans_Amt]
+
+
+//Current Week Revenue
+Current Week Revenue = CALCULATE(
+    SUM('credit_card (3)'[Revenue]),
+    FILTER( 
+        ALL('credit_card (3)'),
+        'credit_card (3)'[WeekNo] = MAX('credit_card (3)'[WeekNo])))
+
+
+// Previous Week Revenue 
+Previous Week Revenue = CALCULATE(
+    SUM('credit_card (3)'[Revenue]),
+    FILTER(
+        ALL('credit_card (3)'),
+        'credit_card (3)'[WeekNo] = MAX('credit_card (3)'[WeekNo] )-1))
+
+
+// Week Over Week Revenue
+WoW Revenue = DIVIDE(([Current Week Revenue] - [Previous Week Revenue]),[Previous Week Revenue])
